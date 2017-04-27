@@ -3,9 +3,6 @@
 " to enjoy the features of Vim
 set nocompatible
 
-" Activate pathogen
-"call pathogen#infect()
-
 " --- Vundle setup ---
 filetype off
 
@@ -22,6 +19,14 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'chiel92/vim-autoformat'
+Plugin 'bling/vim-airline'
+Plugin 'shougo/neocomplete.vim'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+Plugin 'lervag/vimtex'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tpope/vim-rhubarb'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -35,14 +40,14 @@ set ruler		" Display cursor position
 set wrap		" Wrap lines when they are too long
 
 set scrolloff=3		" Display at least 3 lines around your cursor
-			" (for scrolling)
+" (for scrolling)
 
 set guioptions=T	" Enable the toolbar
 
 " -- Search
 set ignorecase		" Ignore case when searching
 set smartcase		" If there is an uppercase in your search term
-			" search case sensitive again
+" search case sensitive again
 set incsearch		" Highlight search results when typing
 set hlsearch		" Highlight search results
 
@@ -88,7 +93,10 @@ imap <right> <nop>
 imap ii <Esc>
 
 " Define the <leader> key
-let mapleader = "."
+let mapleader = ","
+
+" Define the <localleader> key
+let maplocalleader = ";"
 
 " Activate the NERDTree when launching Vim
 autocmd vimenter * NERDTree
@@ -103,4 +111,35 @@ nmap <leader>Ja mA:Ack "<C-r>=expand("<cWORD>")<cr>"
 
 " Key combination for the ctrlp plugin
 let g:ctrlp_map = '<leader>c'
+
+" Autoformat key
+noremap <F3> :Autoformat<CR>
+
+" Auto format on save
+au BufWrite * :Autoformat
+
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Change the Latex engine
+let g:tex_flavor = 'latex'
+
+" Spell checker
+nmap <silent> <leader>s :set spell!<CR>
+set spelllang=es_es
+
+" NERDTree tabs
+let g:nerdtree_tabs_open_on_console_startup = 1
+nmap <C-l> :tabn<CR>
+nmap <C-h> :tabp<CR>
 
