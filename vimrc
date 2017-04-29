@@ -27,6 +27,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'lervag/vimtex'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-rhubarb'
+Plugin 'evidens/vim-twig'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -37,7 +38,11 @@ filetype plugin indent on
 set title		" Update the title of your window or your terminal
 set number		" Display line numbers
 set ruler		" Display cursor position
-set wrap		" Wrap lines when they are too long
+"set wrap		" Wrap lines when they are too long
+set nowrap
+" Define tabs as 3 spaces
+set tabstop=3
+set shiftwidth=3
 
 set scrolloff=3		" Display at least 3 lines around your cursor
 " (for scrolling)
