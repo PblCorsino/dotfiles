@@ -28,6 +28,7 @@ Plugin 'lervag/vimtex'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'evidens/vim-twig'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -39,20 +40,18 @@ set title		" Update the title of your window or your terminal
 set number		" Display line numbers
 set ruler		" Display cursor position
 "set wrap		" Wrap lines when they are too long
-set nowrap
-" Define tabs as 3 spaces
-set tabstop=3
-set shiftwidth=3
+set nowrap		" Disable wrap lines
+" Define tabs as 3 spaces, disabled, let the autoformat work
+" set tabstop=3
+" set shiftwidth=3
 
-set scrolloff=3		" Display at least 3 lines around your cursor
-" (for scrolling)
+set scrolloff=3		" Display at least 3 lines around your cursor (for scrolling)
 
 set guioptions=T	" Enable the toolbar
 
 " -- Search
 set ignorecase		" Ignore case when searching
-set smartcase		" If there is an uppercase in your search term
-" search case sensitive again
+set smartcase		" If there is an uppercase in your search term search case sensitive again
 set incsearch		" Highlight search results when typing
 set hlsearch		" Highlight search results
 
@@ -63,8 +62,7 @@ set noerrorbells	" Prevent Vim from beeping
 " Backspace behaves as expected
 set backspace=indent,eol,start
 
-" Hide buffer (file) instead of abandoning when switching
-" to another buffer
+" Hide buffer (file) instead of abandoning when switching to another buffer
 set hidden
 
 " Enable syntax highlighting
@@ -94,7 +92,7 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-" Get rid of esc key
+" Get rid of esc key (use ii instead)
 imap ii <Esc>
 
 " Define the <leader> key
