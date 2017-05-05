@@ -21,7 +21,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chiel92/vim-autoformat'
 Plugin 'bling/vim-airline'
-Plugin 'shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
 Plugin 'lervag/vimtex'
@@ -29,6 +28,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'evidens/vim-twig'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'Rip-Rip/clang_complete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -121,9 +121,6 @@ noremap <F3> :Autoformat<CR>
 " Auto format on save
 au BufWrite * :Autoformat
 
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -145,4 +142,7 @@ set spelllang=es_es
 let g:nerdtree_tabs_open_on_console_startup = 1
 nmap <C-l> :tabn<CR>
 nmap <C-h> :tabp<CR>
+
+" Disable omnicomplete preview window
+set completeopt-=preview
 
