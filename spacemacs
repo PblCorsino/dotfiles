@@ -318,6 +318,8 @@ you should place your code here."
   ;; (setq-default helm-make-build-dir "build")
   ;; Switch between cpp and hpp files
   (push '("cpp" "hpp") projectile-other-file-alist)
+  ;; Neo tree icons
+  (setq neo-theme 'nerd)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
