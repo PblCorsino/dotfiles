@@ -10,7 +10,7 @@ values."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 'spacemacs
+   dotsglobal-linum-modepacemacsglobal-linum-mode-distribution 'spacemacs
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
@@ -263,7 +263,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -318,7 +318,8 @@ you should place your code here."
   ;; Set the build dir as default for the make files in c++
   ;; (setq-default helm-make-build-dir "build")
   ;; Switch between cpp and hpp files
-  (push '("cpp" "hpp") projectile-other-file-alist)
+  ;; TODO: Really needed?
+  ;; (push '("cpp" "hpp") projectile-other-file-alist)
   ;; Neo tree icons
   (setq neo-theme 'nerd)
   ;; Latex full document preview
