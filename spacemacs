@@ -305,6 +305,7 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   ;; Use the values stored in a file named .dir-locals.el in the project dir
+  ;; to define the build directory
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
   )
 
