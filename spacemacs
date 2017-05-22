@@ -306,6 +306,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   ;; Use the values stored in a file named .dir-locals.el in the project dir
   ;; to define the build directory
+  ;; Set the variable helm-make-build-dir safe for strings
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
   )
 
